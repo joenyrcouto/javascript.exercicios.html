@@ -3,52 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mudar imagem</title>
+    <title>Alterar texto do input </title>
 </head>
-<body style="background-image: url(take0.jpg);">
-    <button onclick="background()">aperte aqui</button>
+<body style="font-size: 26px;">
+    <h1>Exemplo 12</h1>
+    <p>Alterar o texto do input</p>
+    <label for="caixa">Nome:</label>
+    <input id="caixa" type="text" name="caixa" placeholder="Digite seu nome" onchange="atualizarnome()">
+    <label for="email">Email:</label>
+    <input id="email" type="text" name="email" placeholder="Digite seu nome" onchange="atualizaremail()">
+    <input type="button" value="Limpar" onclick="apagar()">
+    <script>
+        function atualizarnome(){
+            const texto = document.getElementById("caixa");
+            texto.value = texto.value.toUpperCase();
+        }
+        function atualizaremail(){
+            const email = document.getElementById("email");
+            email.value = email.value.toLowerCase();
+        }
+        function apagar(){
+            document.getElementById("caixa").value = "";
+            document.getElementById("email").value = ""; 
+        }
+    </script>
 </body>
-<script>
-    let t=1;
-    function background() {
-        if (t==1){
-        document.body.style.backgroundImage = "url(take1.jpg)";
-        t=2;}
-        else {
-            if (t==2){
-        document.body.style.backgroundImage = "url(take2.jpg)";
-        t=3;}
-        else {
-            if (t==3){
-        document.body.style.backgroundImage = "url(take3.jpg)";
-        t=4;}
-        else {
-            if (t==4){
-        document.body.style.backgroundImage = "url(take4.jpg)";
-        t=5;}
-        else {
-            if (t==5){
-        document.body.style.backgroundImage = "url(take5.jpg)";
-        t=6;}
-        else {
-            if (t==6){
-        document.body.style.backgroundImage = "url(take6.jpg)";
-        t=7;}
-        else {
-            if (t==7){
-        document.body.style.backgroundImage = "url(take7.jpg)";
-        t=8;}
-        else {
-            if (t==8){
-        document.body.style.backgroundImage = "url(take0.jpg)";
-        t=1;}
-        }
-        }
-        }
-        }
-        }
-        }
-        }
-        }
-</script>
 </html>
