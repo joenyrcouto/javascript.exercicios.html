@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 15</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: black;
+        }
+        form{
+            background-color: rgb(255, 255, 255);
+            padding: 50px;
+            border-radius: 20px;
+            border: 6px solid;
+            border-style: outset;
+            margin: auto;
+            width: 30%;
+        }
+        input[type="text"]{
+            width: 240px;
+            height: 25px;
+            border-radius: 6px;
+            font-size: 18px;
+        }
+        input[type="text"]:focus{
+            outline: 3px solid hsla(0, 0%, 80%, 0.8);
+        }
+        input[type="submit"]{
+            font-size: 18px;
+            border-radius: 6px;
+            padding: 4px;
+            width: 100px;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body style="font-size: 26px;">
+    <h2 style="color: white;">Exemplo 15</h2>
+    <h3 style="color: white;">Validação de formulário</h3>
+    <form name="formulario" action="cadastro.php" onsubmit="return validarFormulario();" method="post">
+        <label for="nome">Nome:</label>
+        <input name="nome" id="nome" type="text">
+        <br>
+        <br>
+        <input id="enviar" type="submit" value="Enviar">
+    </form>
+    <script>
+        function validarFormulario() {
+            let dados = document.forms["formulario"]["nome"].value;
+            if (dados == "") {
+                alert("Coloque seu nome! '-'");
+            return false;
+        }
+    }
+    </script>
+</body>
+</html>
