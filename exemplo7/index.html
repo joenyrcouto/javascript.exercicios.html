@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 16</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: rgb(0, 0, 0);
+        }
+        div{
+            background-color: rgb(255, 255, 255);
+            padding: 50px;
+            border-radius: 30px;
+            border: 6px solid;
+            border-style: inset;
+            margin: auto;
+            width: 30%;
+        }
+        input[type="text"]{
+            width: 100px;
+            height: 25px;
+            border-radius: 6px;
+            font-size: 18px;
+            margin-left: 10px;
+        }
+        input[type="text"]:focus{
+            outline: 3px solid hsla(0, 0%, 81%, 0.8);
+        }
+        button{
+            font-size: 18px;
+            border-radius: 6px;
+            padding: 4px;
+            width: 100px;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+<body style="font-size: 26px;">
+    <h2 style="color: white;">Exemplo 16</h2>
+    <h3 style="color: white;">Validação de formulário - Exemplo 2</h3>
+    <div>
+        <label for="idade">Idade:</label>
+        <input name="idade" id="idade" type="text"> <br>
+        <p id="msg" style="color: rgb(30, 156, 210);"></p>
+        <button id="enviar" onclick="validar();">Enviar</button>
+    </div> 
+    <script>
+        function validar(){
+            const id = document.getElementById("idade").value;
+            if(isNaN(id) || id<1 || id>130)
+                alert("Não minta a idade! '-'");
+            else
+                alert("Idade correta!");
+        }
+    </script>
+</body>
+</html>
