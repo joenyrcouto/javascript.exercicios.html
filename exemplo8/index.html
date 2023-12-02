@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 17</title>
+    <style>
+        body{
+            text-align: center;
+            background-color: rgb(0, 0, 0);
+        }
+        div{
+            background-color: rgb(255, 255, 255);
+            padding: 50px;
+            border-radius: 30px;
+            border: 6px solid;
+            border-style: inset;
+            margin: auto;
+            width: 30%;
+        }
+        input[type="text"]{
+            width: 170px;
+            height: 25px;
+            border-radius: 6px;
+            font-size: 18px;
+            margin-left: 10px;
+
+        }
+        input[type="text"]:focus{
+            outline: 3px solid hsla(0, 0%, 85%, 0.8);
+        }
+        button{
+            font-size: 18px;
+            border-radius: 6px;
+            padding: 4px;
+            width: 100px;
+            margin-top: 6px;
+        }
+        #dados {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    </style>
+</head>
+<body style="font-size: 26px;">
+    <h2 style="color: white;">Exemplo 17 </h2>
+    <h3 style="color: white;">Agenda</h3>
+    <div>
+        <label for="Nome"><p>Nome: <input name="nome" id="nome" type="text"></p></label>
+        <label for="cel"><p>Celular:<input name="cel" id="cel" type="text"></p></label>
+        <button id="cadastrar" onclick="cadastrar();">Cadastrar</button>
+    </div> <br>
+    <div id="dados">
+        <hr>
+        <h2>Nome       -     Celular</h2>
+        <hr>
+    </div>
+    <script>
+        function cadastrar(){
+            const n = document.getElementById("nome").value;
+            const c = document.getElementById("cel").value;
+            const d = document.getElementById("dados");
+            const h3 = document.createElement("h3");
+            h3.innerHTML = n + " - " + c;
+            d.appendChild(h3);
+            document.getElementById("nome").value = "";
+            document.getElementById("cel").value = "";
+        }
+    </script>
+</body>
+</html>
